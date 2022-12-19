@@ -11,12 +11,12 @@ from keras.layers import Dense, Dropout, LSTM
 
 
 # load data
-company = 'FB'
+company = ['FB']
 
 start = dt.datetime(2009,1,1)
 end = dt.datetime(2022,1,1)
 
-data = web.DataReader(company, 'iex', start, end)
+data = web.DataReader(company, 'yahoo', start, end)
 
 # prepare data
 scaler = MinMaxScaler(feature_range=(0,1)) # transform the data range from (0-1000) to (0-1)
